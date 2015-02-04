@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 17, 2014 at 03:48 AM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: localhost
+-- Generation Time: Feb 04, 2015 at 03:48 AM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,8 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `nha_sach`
+-- Database: `zf2standar`
 --
+CREATE DATABASE IF NOT EXISTS `zf2standar` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `zf2standar`;
 
 -- --------------------------------------------------------
 
@@ -54,6 +56,14 @@ CREATE TABLE IF NOT EXISTS `user_role` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
+--
+-- Dumping data for table `user_role`
+--
+
+INSERT INTO `user_role` (`id`, `roleId`, `is_default`, `parent_id`) VALUES
+(1, 'khach', 0, NULL),
+(2, 'nguoi-dung', 0, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -67,10 +77,6 @@ CREATE TABLE IF NOT EXISTS `user_role_linker` (
   KEY `role_id` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `user_role` (`id`, `roleId`, `is_default`, `parent_id`) VALUES
-(1, 'khach', 0, NULL),
-(2, 'nguoi-dung', 0, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -83,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `zf_term` (
   `slug` varchar(200) DEFAULT NULL,
   `term_group` bigint(10) DEFAULT NULL,
   PRIMARY KEY (`term_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=172 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=173 ;
 
 -- --------------------------------------------------------
 
@@ -101,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `zf_term_taxonomy` (
   PRIMARY KEY (`term_taxonomy_id`),
   KEY `term_id` (`term_id`),
   KEY `parent` (`parent`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
 
 --
 -- Constraints for dumped tables
