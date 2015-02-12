@@ -14,7 +14,6 @@ return array(
         'BaconStringUtils',
         'Application',
         'S3UTaxonomy',
-        'ModuleStandar',
         
     ),
 
