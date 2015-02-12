@@ -1,0 +1,7 @@
+1. zendframework
+	zend-developer-tools
+	zftool
+2. bjyoungblood
+	bjyprofiler
+3. bacon
+	bacon-string-utils
